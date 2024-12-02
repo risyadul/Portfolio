@@ -23,22 +23,21 @@ const skills = [
 <template>
   <div class="space-y-20">
     <!-- Hero Section -->
-    <div class="flex items-center gap-16">
-      <div class="flex-1 space-y-6">
+    <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+      <div class="flex-1 space-y-6 w-full text-center lg:text-left">
         <div class="space-y-2">
-          <h2 class="text-gray-600 text-lg">Welcome to my portfolio</h2>
-          <h1 class="text-5xl font-bold text-gray-900">RISYADULALIM</h1>
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900">RISYADULALIM</h1>
         </div>
 
-        <p class="text-xl text-gray-600 leading-relaxed">
+        <p class="text-lg lg:text-xl text-gray-600 leading-relaxed">
           Software Engineer specializing in Android Development
         </p>
 
-        <div class="flex gap-4">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
           <a
             href="https://github.com/risyadul"
             target="_blank"
-            class="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 flex items-center gap-2"
+            class="px-6 lg:px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center gap-2"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -50,7 +49,7 @@ const skills = [
           <a
             href="https://www.linkedin.com/in/risyadul-alim-5410ab187/"
             target="_blank"
-            class="px-8 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200 flex items-center gap-2"
+            class="px-6 lg:px-8 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200 flex items-center justify-center gap-2"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -62,7 +61,7 @@ const skills = [
         </div>
 
         <!-- Contact Details -->
-        <div class="pt-6 space-y-3">
+        <div class="pt-6 space-y-3 flex flex-col items-center lg:items-start">
           <div class="flex items-center gap-2 text-gray-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -105,12 +104,12 @@ const skills = [
         </div>
       </div>
 
-      <div class="relative">
-        <div class="w-80 h-80">
+      <div class="relative order-first lg:order-last">
+        <div class="w-48 h-48 lg:w-64 lg:h-64">
           <img
-            src="https://i.ibb.co.com/JksR0Tm/Saber27s-Love-of-Rice-28-Samurai-Remnent29-ezgif-com-crop.webp"
+            src="https://i.ibb.co.com/NVVHzrt/Screenshot-2024-12-02-at-20-43-15.png"
             alt="Profile Photo"
-            class="w-full h-full rounded-2xl object-cover shadow-2xl"
+            class="w-full h-full rounded-full object-cover shadow-2xl"
           />
         </div>
       </div>
@@ -118,30 +117,29 @@ const skills = [
 
     <!-- About Section -->
     <div class="space-y-6">
-      <h2 class="text-3xl font-bold text-gray-900">About Me</h2>
-      <div class="bg-white rounded-2xl p-8 shadow-lg">
-        <p class="text-gray-600 leading-relaxed">
-          As a Software Engineer with expertise in Android Development, I have made significant
-          contributions in my current role at Lion Parcel and PT Enigma Cipta Humanika. My skills
-          include Android, MVVM, Rxjava, Kotlin, Dagger, Firebase, JUnit, Jetpack, and Git. I am
-          passionate about continuously improving my skills and staying up-to-date with the latest
-          technologies in the field of Android Development. My future goals include leveraging my
-          knowledge and expertise to develop innovative and user-friendly applications that solve
-          real-world problems. I am confident that my technical skills, problem-solving abilities,
-          and dedication to excellence make me a valuable asset in the software engineering
-          industry.
+      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 text-center lg:text-left">About Me</h2>
+      <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
+        <p class="text-gray-600 leading-relaxed text-sm lg:text-base">
+          As a Software Engineer with expertise in both Android Development and Fullstack Development, I have made significant
+          contributions at Lion Parcel. My Android development skills include MVVM, RxJava, Kotlin, Dagger, Firebase, JUnit, 
+          and Jetpack, while my fullstack capabilities encompass Go, Vue.js, TypeScript, and MySQL. I have successfully 
+          delivered multiple mobile applications and web-based systems, demonstrating my ability to work across different 
+          platforms and technologies. I am passionate about creating efficient, scalable solutions and continuously expanding 
+          my technical expertise. My experience in both mobile and web development allows me to understand and implement 
+          end-to-end solutions effectively. I am dedicated to writing clean, maintainable code and staying current with 
+          industry best practices and emerging technologies.
         </p>
       </div>
     </div>
 
     <!-- Skills Section -->
     <div class="space-y-6">
-      <h2 class="text-3xl font-bold text-gray-900">Skills</h2>
-      <div class="flex flex-wrap gap-4">
+      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 text-center lg:text-left">Skills</h2>
+      <div class="flex flex-wrap justify-center lg:justify-start gap-3 lg:gap-4">
         <div
           v-for="skill in skills"
           :key="skill"
-          class="px-6 py-3 bg-white rounded-xl shadow-lg text-gray-800 hover:shadow-xl transition-shadow duration-300"
+          class="px-4 lg:px-6 py-2 lg:py-3 bg-white rounded-xl shadow-lg text-gray-800 text-sm lg:text-base hover:shadow-xl transition-shadow duration-300"
         >
           {{ skill }}
         </div>
