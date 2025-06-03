@@ -43,10 +43,11 @@
           <!-- Links -->
           <div class="mt-4 lg:mt-6 flex flex-wrap gap-3 lg:gap-4">
             <a
-              v-if="project.demo !== '#'"
-              :href="project.demo"
+              v-if="project.demo && project.demo !== '#'"
+              :href="project.demo === 'playstore-soon' ? '#' : project.demo"
               target="_blank"
               class="inline-flex items-center px-3 lg:px-4 py-2 text-sm border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200"
+              :class="{ 'cursor-not-allowed opacity-75': project.demo === 'playstore-soon' }"
             >
               <svg 
                 v-if="project.type === 'web'" 
@@ -64,7 +65,23 @@
               >
                 <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.799 2.196a1 1 0 0 1-.439 1.148l-2.674 1.552-2.731-2.731 2.731-2.731 2.674 1.552a1 1 0 0 1 .439 1.21zM13.892 9.555l2.302-2.302-10.937-6.333 8.635 8.635z"/>
               </svg>
-              {{ project.type === 'web' ? 'Visit Website' : 'View on PlayStore' }}
+              {{ project.type === 'web' ? 'Visit Website' : project.demo === 'playstore-soon' ? 'PlayStore (Soon)' : 'View on PlayStore' }}
+            </a>
+            <a
+              v-if="project.appstore && project.appstore !== '#'"
+              :href="project.appstore === 'appstore-soon' ? '#' : project.appstore"
+              target="_blank"
+              class="inline-flex items-center px-3 lg:px-4 py-2 text-sm border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200"
+              :class="{ 'cursor-not-allowed opacity-75': project.appstore === 'appstore-soon' }"
+            >
+              <svg 
+                class="w-5 lg:w-6 h-5 lg:h-6 mr-2" 
+                fill="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              {{ project.appstore === 'appstore-soon' ? 'AppStore (Soon)' : 'View on AppStore' }}
             </a>
             <a
               v-if="project.github !== '#'"
@@ -90,6 +107,66 @@
 const projects = [
   {
     id: 1,
+    title: 'Inspire (ESS App)',
+    type: 'mobile',
+    description:
+      'A multiplatform Employee Self Service application built with Kotlin Multiplatform and Compose Multiplatform for both Android and iOS platforms.',
+    image: '/inspire-app.png',
+    technologies: [
+      'Kotlin Multiplatform',
+      'Compose Multiplatform',
+      'Clean Architecture',
+      'Ktor Client',
+      'SQLDelight',
+      'Koin',
+      'Firebase',
+      'Google Maps',
+    ],
+    demo: 'https://play.google.com/store/apps/details?id=com.palmco.inspire&hl=id',
+    appstore: 'appstore-soon',
+    github: '#',
+    achievements: [
+      'Implemented Clean Architecture principles for maintainable and testable code',
+      'Built cross-platform UI using Compose Multiplatform targeting both Android and iOS',
+      'Integrated with multiple APIs (ESS, SawitGuard, Guyub, SAPA)',
+      'Developed Monitoring Form with specialized field support',
+      'Implemented type-safe SQL database operations with SQLDelight',
+      'Configured Firebase Crashlytics for crash reporting and Firebase Messaging for push notifications',
+      'Created responsive UI with Material Design Components',
+    ],
+  },
+  {
+    id: 2,
+    title: 'DFarm App',
+    type: 'mobile',
+    description:
+      'A Kotlin Multiplatform Mobile (KMM) application for digital farming operations, providing field data collection, attendance tracking, and farm management features for palm oil plantation operations.',
+    image: '/dfarm-app.png',
+    technologies: [
+      'Kotlin Multiplatform',
+      'Compose Multiplatform',
+      'Clean Architecture',
+      'Ktor Client',
+      'SQLDelight',
+      'Koin',
+      'Material 3',
+      'Voyager',
+    ],
+    demo: 'playstore-soon',
+    appstore: 'appstore-soon',
+    github: '#',
+    achievements: [
+      'Implemented user authentication with role-based access control',
+      'Developed location-based attendance tracking system',
+      'Created field data collection forms (PB.24 for Harvest Data, PB.25 for Field Inspection)',
+      'Built offline support with local data storage and synchronization',
+      'Integrated Bluetooth printer support for forms and reports',
+      'Designed responsive UI with Material 3 Design System and custom Dfarm branding',
+      'Implemented Clean Architecture with MVVM pattern for maintainable code',
+    ],
+  },
+  {
+    id: 3,
     title: 'Lion Parcel - Consumer App',
     type: 'mobile',
     description:
@@ -115,7 +192,7 @@ const projects = [
     ],
   },
   {
-    id: 2,
+    id: 4,
     title: 'Lion Parcel - Trucking App',
     type: 'mobile',
     description:
@@ -141,7 +218,7 @@ const projects = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     title: 'Genesis Mobile - Consolidator App',
     type: 'mobile',
     description:
@@ -195,7 +272,7 @@ const projects = [
     ],
   },
   {
-    id: 4,
+    id: 7,
     title: 'Simple Clock App',
     description:
       'A minimalist clock and timer application built with modern Android development practices, featuring real-time clock display and customizable timer functionality.',
@@ -220,7 +297,7 @@ const projects = [
     ],
   },
   {
-    id: 5,
+    id: 8,
     title: 'Flutter Todo App',
     description:
       'A simple and modern Flutter todo application using Hive for data storage, implementing clean architecture principles and modern Flutter development practices.',

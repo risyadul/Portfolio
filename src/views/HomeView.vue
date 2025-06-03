@@ -1,16 +1,23 @@
 <script setup lang="ts">
 const skills = [
-  'Android Development',
-  'MVVM',
-  'RxJava',
   'Kotlin',
-  'Dagger',
+  'Kotlin Multiplatform',
+  'Compose Multiplatform',
+  'Android Development',
+  'iOS Development',
+  'MVVM',
+  'Clean Architecture',
+  'Kotlin Coroutines',
+  'Ktor',
+  'SQLDelight',
+  'Koin',
   'Firebase',
   'JUnit',
   'Jetpack',
   'Git',
-  'Google Maps Api',
-  'Geocoder',
+  'Google Maps API',
+  'RxJava',
+  'Dagger',
   'Go',
   'MySQL',
   'JavaScript',
@@ -30,7 +37,7 @@ const skills = [
         </div>
 
         <p class="text-lg lg:text-xl text-gray-600 leading-relaxed">
-          Software Engineer specializing in Android Development
+          Software Engineer specializing in Kotlin Multiplatform & Android Development
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -107,7 +114,7 @@ const skills = [
       <div class="relative order-first lg:order-last">
         <div class="w-48 h-48 lg:w-64 lg:h-64">
           <img
-            src="https://i.ibb.co.com/NVVHzrt/Screenshot-2024-12-02-at-20-43-15.png"
+            src="/images/profile.jpg"
             alt="Profile Photo"
             class="w-full h-full rounded-full object-cover shadow-2xl"
           />
@@ -120,14 +127,17 @@ const skills = [
       <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 text-center lg:text-left">About Me</h2>
       <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
         <p class="text-gray-600 leading-relaxed text-sm lg:text-base">
-          As a Software Engineer with expertise in both Android Development and Fullstack Development, I have made significant
-          contributions at Lion Parcel. My Android development skills include MVVM, RxJava, Kotlin, Dagger, Firebase, JUnit, 
-          and Jetpack, while my fullstack capabilities encompass Go, Vue.js, TypeScript, and MySQL. I have successfully 
-          delivered multiple mobile applications and web-based systems, demonstrating my ability to work across different 
-          platforms and technologies. I am passionate about creating efficient, scalable solutions and continuously expanding 
-          my technical expertise. My experience in both mobile and web development allows me to understand and implement 
-          end-to-end solutions effectively. I am dedicated to writing clean, maintainable code and staying current with 
-          industry best practices and emerging technologies.
+          As a Software Engineer with expertise in Kotlin Multiplatform, Android Development, and Fullstack Development, I have made significant
+          contributions across various projects. My mobile development skills include Kotlin Multiplatform, Compose Multiplatform, Clean Architecture, 
+          MVVM, Kotlin Coroutines, Ktor, SQLDelight, Koin, and Firebase, while my fullstack capabilities encompass Go, Vue.js, TypeScript, and MySQL.
+          
+          I have successfully delivered multiple cross-platform mobile applications for both Android and iOS, as well as web-based systems, 
+          demonstrating my ability to work across different platforms and technologies. My recent work includes developing agricultural management 
+          applications with features like attendance tracking, harvest data collection, and area measurement with location integration.
+          
+          I am passionate about creating efficient, scalable solutions and continuously expanding my technical expertise. My experience in 
+          cross-platform development allows me to understand and implement end-to-end solutions effectively. I am dedicated to writing clean, 
+          maintainable code and staying current with industry best practices and emerging technologies.
         </p>
       </div>
     </div>
