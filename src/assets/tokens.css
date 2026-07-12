@@ -1,0 +1,56 @@
+/* ===========================================================================
+   Design tokens — "Dark developer luxury"
+   Colors are space-separated RGB channels so Tailwind can apply opacity via
+   rgb(var(--x) / <alpha-value>). Light on :root; dark overrides under .dark.
+   Terminal/code tokens are defined once (not overridden) → dark in both themes.
+   =========================================================================== */
+
+:root {
+  /* Surfaces & text — LIGHT ("paper") */
+  --bg: 246 246 241;
+  --bg-2: 239 239 232;
+  --surface: 255 255 255;
+  --surface-2: 240 240 233;
+  --line: 226 225 216;
+  --line-2: 216 215 204;
+  --text: 20 23 28;
+  --muted: 86 93 107;
+  --faint: 139 145 160;
+
+  /* Accents */
+  --accent: 201 242 77; /* lime — the single signal */
+  --accent-ink: 74 96 0; /* readable lime-family text on light */
+  --link: 60 74 190; /* iris — secondary */
+
+  /* Terminal / code surface — DARK in both themes */
+  --term-bg: 13 16 21;
+  --term-line: 33 39 48;
+  --term-text: 224 228 235;
+  --term-muted: 130 138 153;
+  --term-string: 167 224 176;
+  --term-key: 142 162 255;
+
+  /* Shape & motion */
+  --radius: 14px;
+  --radius-sm: 10px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --grain-opacity: 0.02;
+}
+
+.dark {
+  --bg: 11 13 16;
+  --bg-2: 15 18 23;
+  --surface: 16 19 25;
+  --surface-2: 22 26 33;
+  --line: 35 41 50;
+  --line-2: 44 51 62;
+  --text: 231 234 240;
+  --muted: 139 147 163;
+  --faint: 91 99 115;
+
+  --accent: 201 242 77;
+  --accent-ink: 201 242 77; /* lime is legible on near-black */
+  --link: 142 162 255;
+
+  --grain-opacity: 0.04;
+}

@@ -1,159 +1,120 @@
 <script setup lang="ts">
-const skills = [
-  'Kotlin',
-  'Kotlin Multiplatform',
-  'Compose Multiplatform',
-  'Android Development',
-  'iOS Development',
-  'MVVM',
-  'Clean Architecture',
-  'Kotlin Coroutines',
-  'Ktor',
-  'SQLDelight',
-  'Koin',
-  'Firebase',
-  'JUnit',
-  'Jetpack',
-  'Git',
-  'Google Maps API',
-  'RxJava',
-  'Dagger',
-  'Go',
-  'MySQL',
-  'JavaScript',
-  'Vue',
-  'Tailwind CSS',
-  'Jira',
-]
+import { RouterLink } from 'vue-router'
+import { profile, skillGroups } from '@/data/profile'
+import TerminalWindow from '@/components/ui/TerminalWindow.vue'
+
+const avatar = `${import.meta.env.BASE_URL}images/profile.jpg`
 </script>
 
 <template>
-  <div class="space-y-20">
-    <!-- Hero Section -->
-    <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-      <div class="flex-1 space-y-6 w-full text-center lg:text-left">
-        <div class="space-y-2">
-          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900">RISYADULALIM</h1>
-        </div>
+  <div>
+    <!-- Hero -->
+    <section class="grid items-stretch gap-6 lg:grid-cols-[1.55fr_1fr]">
+      <TerminalWindow title="risyadul@portfolio: ~" badge="zsh">
+        <div class="font-mono text-[13.5px] leading-[1.75]">
+          <p class="text-term-muted"><span class="text-accent">risyadul@portfolio</span> ~ % whoami</p>
 
-        <p class="text-lg lg:text-xl text-gray-600 leading-relaxed">
-          Software Engineer specializing in Kotlin Multiplatform & Android Development
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <a
-            href="https://github.com/risyadul"
-            target="_blank"
-            class="px-6 lg:px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center gap-2"
+          <h1
+            class="my-3.5 font-display text-[clamp(2.5rem,1rem+6vw,4.5rem)] font-bold leading-[0.94] tracking-[-0.03em] text-term-text"
           >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-              />
-            </svg>
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/risyadul-alim-5410ab187/"
-            target="_blank"
-            class="px-6 lg:px-8 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200 flex items-center justify-center gap-2"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-              />
-            </svg>
-            LinkedIn
-          </a>
-        </div>
+            {{ profile.name
+            }}<span
+              class="ml-1 inline-block h-[0.62em] w-[9px] translate-y-[1px] bg-accent align-baseline animate-blink"
+              aria-hidden="true"
+            ></span>
+          </h1>
 
-        <!-- Contact Details -->
-        <div class="pt-6 space-y-3 flex flex-col items-center lg:items-start">
-          <div class="flex items-center gap-2 text-gray-600">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-              />
-            </svg>
-            <span>081211544408</span>
+          <p class="text-term-text">
+            &gt; Software Engineer <span class="text-accent-ink">· {{ profile.tagline }}</span>
+          </p>
+
+          <div class="mt-3.5 leading-[1.95] text-[12.5px] text-term-muted">
+            <p>&gt; location&nbsp;&nbsp;<span class="text-term-text">{{ profile.location }}</span></p>
+            <p>&gt; email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-term-text">{{ profile.email }}</span></p>
+            <p>&gt; uptime&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-term-text">{{ profile.yearsExperience }}+ years shipping production apps</span></p>
           </div>
-          <div class="flex items-center gap-2 text-gray-600">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
-            </svg>
-            <span>risanjayy@gmail.com</span>
-          </div>
-          <div class="flex items-center gap-2 text-gray-600">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-            <span>Jakarta, Indonesia</span>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <RouterLink to="/projects" class="btn btn-primary">
+              View Projects
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </RouterLink>
+            <a :href="profile.github" target="_blank" rel="noopener" class="btn btn-outline">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z" /></svg>
+              GitHub
+            </a>
           </div>
         </div>
-      </div>
+      </TerminalWindow>
 
-      <div class="relative order-first lg:order-last">
-        <div class="w-48 h-48 lg:w-64 lg:h-64">
-          <img
-            src="/images/profile.jpg"
-            alt="Profile Photo"
-            class="w-full h-full rounded-full object-cover shadow-2xl"
-          />
+      <div
+        class="flex flex-col items-center justify-center gap-3.5 rounded-[var(--radius)] border border-line bg-surface p-6"
+      >
+        <img
+          :src="avatar"
+          alt="Portrait of Risyadul Alim"
+          width="150"
+          height="150"
+          class="avatar-portrait"
+        />
+        <span class="font-mono text-[11px] text-faint">~/risyadul.jpg</span>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section v-reveal class="mt-16">
+      <header class="border-b border-line pb-5">
+        <p class="font-mono text-xs text-accent-ink"><span class="text-faint">~/</span>about</p>
+        <h2 class="mt-3 font-display text-display font-semibold text-balance">
+          Building across the stack, shipped to stores
+        </h2>
+      </header>
+      <div class="surface-card mt-6 p-6 sm:p-8">
+        <div class="flex max-w-[70ch] flex-col gap-4 text-[15px] leading-relaxed text-muted text-pretty">
+          <p v-for="para in profile.about" :key="para">{{ para }}</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- About Section -->
-    <div class="space-y-6">
-      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 text-center lg:text-left">About Me</h2>
-      <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
-        <p class="text-gray-600 leading-relaxed text-sm lg:text-base">
-          As a Software Engineer with expertise in Kotlin Multiplatform, Android Development, and Fullstack Development, I have made significant
-          contributions across various projects. My mobile development skills include Kotlin Multiplatform, Compose Multiplatform, Clean Architecture, 
-          MVVM, Kotlin Coroutines, Ktor, SQLDelight, Koin, and Firebase, while my fullstack capabilities encompass Go, Vue.js, TypeScript, and MySQL.
-          
-          I have successfully delivered multiple cross-platform mobile applications for both Android and iOS, as well as web-based systems, 
-          demonstrating my ability to work across different platforms and technologies. My recent work includes developing agricultural management 
-          applications with features like attendance tracking, harvest data collection, and area measurement with location integration.
-          
-          I am passionate about creating efficient, scalable solutions and continuously expanding my technical expertise. My experience in 
-          cross-platform development allows me to understand and implement end-to-end solutions effectively. I am dedicated to writing clean, 
-          maintainable code and staying current with industry best practices and emerging technologies.
-        </p>
+    <!-- Skills as build.gradle.kts -->
+    <section v-reveal class="mt-16">
+      <header class="border-b border-line pb-5">
+        <p class="font-mono text-xs text-accent-ink"><span class="text-faint">~/</span>skills</p>
+        <h2 class="mt-3 font-display text-display font-semibold">build.gradle.kts</h2>
+      </header>
+      <div class="mt-6">
+        <TerminalWindow title="build.gradle.kts" badge="kotlin">
+          <div class="overflow-x-auto">
+            <div class="min-w-max font-mono text-[13px] leading-[1.8]">
+              <div><span class="syn-kw">dependencies</span> {</div>
+              <template v-for="(group, gi) in skillGroups" :key="group.name">
+                <div class="syn-indent syn-cmt" :class="{ 'mt-2.5': gi > 0 }">// {{ group.name }}</div>
+                <div class="syn-indent">
+                  <span class="syn-fn">implementation</span>(<template
+                    v-for="(item, ii) in group.items"
+                    :key="item"
+                    ><span class="syn-str">"{{ item }}"</span><span v-if="ii < group.items.length - 1">, </span></template
+                  >)
+                </div>
+              </template>
+              <div>}</div>
+            </div>
+          </div>
+        </TerminalWindow>
       </div>
-    </div>
-
-    <!-- Skills Section -->
-    <div class="space-y-6">
-      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 text-center lg:text-left">Skills</h2>
-      <div class="flex flex-wrap justify-center lg:justify-start gap-3 lg:gap-4">
-        <div
-          v-for="skill in skills"
-          :key="skill"
-          class="px-4 lg:px-6 py-2 lg:py-3 bg-white rounded-xl shadow-lg text-gray-800 text-sm lg:text-base hover:shadow-xl transition-shadow duration-300"
-        >
-          {{ skill }}
-        </div>
-      </div>
-    </div>
+    </section>
   </div>
 </template>
+
+<style scoped>
+.avatar-portrait {
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 1px solid rgb(var(--line-2));
+  box-shadow:
+    0 0 0 4px rgb(var(--bg-2)),
+    0 24px 48px -24px rgb(var(--accent) / 0.4);
+}
+</style>

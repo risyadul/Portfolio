@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en" class="dark">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/Portfolio/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risyadul Alim - Portfolio</title>
-    <script type="module" crossorigin src="/Portfolio/assets/index-D6Gur7rK.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-BVNFmZ1G.css">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/Portfolio/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Risyadulalim — Software Engineer specializing in Kotlin Multiplatform, Android, and fullstack development. Based in Jakarta, Indonesia."
+    />
+    <meta name="theme-color" content="#f6f6f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)" />
+    <title>Risyadulalim — Software Engineer</title>
+    <script>
+      // Resolve theme before first paint to avoid a flash of the wrong theme.
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          var isDark = stored ? stored === 'dark' : prefersDark
+          var root = document.documentElement
+          root.classList.toggle('dark', isDark)
+          root.style.colorScheme = isDark ? 'dark' : 'light'
+        } catch (e) {}
+      })()
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/Portfolio/assets/index-CIjhqlnT.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-BzZBwA9p.css">
   </head>
   <body>
     <div id="app"></div>
