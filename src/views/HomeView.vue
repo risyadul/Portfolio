@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { profile, skillGroups } from '@/data/profile'
 import TerminalWindow from '@/components/ui/TerminalWindow.vue'
+import ContributionsSection from '@/components/ContributionsSection.vue'
 
 const avatar = `${import.meta.env.BASE_URL}images/profile.jpg`
 </script>
@@ -103,6 +104,9 @@ const avatar = `${import.meta.env.BASE_URL}images/profile.jpg`
         </TerminalWindow>
       </div>
     </section>
+
+    <!-- GitHub contributions -->
+    <ContributionsSection v-reveal class="mt-16" />
   </div>
 </template>
 
